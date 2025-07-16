@@ -4,16 +4,24 @@
 /* #endregion  */
 
 body {
-  font-family: montserrat;
+  font-family: montserrat, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .valid {
   background-color: green;
+  color: white;
 }
 
 #field {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid black;
+  width: 50%;
+  height: 100%;
+  margin-top: 10%;
 }
 
 #field div {
@@ -24,7 +32,10 @@ body {
   padding: 1rem;
   display: flex;
   justify-content: center;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  user-select: none;
 }
 
 /* #region header */

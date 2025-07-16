@@ -15,7 +15,7 @@ const bingoArray = [
   'Gus references dbl rogue/warr comp',
   'Gus expecting team to mindread',
   'Reholy insta replies to Bloomi mid-run',
-  ' Dave ninjapull',
+  'Dave ninjapull',
   'Random DPS does Z dam',
   'Skip fail',
   'Dave proc',
@@ -23,15 +23,17 @@ const bingoArray = [
   'Warmup key deplete',
   'Gus goes non-verbal',
   'Gus noises',
+  'Missed count',
+  'Slur',
 ];
 const field = document.getElementById('field');
 let numberFields = 0;
 
-while (numberFields < 16) {
-  let randInt = Math.floor(Math.random() * bingoArray.length);
+while (numberFields < 25) {
+  const randInt = Math.floor(Math.random() * bingoArray.length);
 
-  let element = document.createElement('div');
-  let para = document.createElement('p');
+  const element = document.createElement('div');
+  const para = document.createElement('p');
   element.classList.add('bingofields');
   para.textContent = bingoArray[randInt];
   element.append(para);
@@ -41,9 +43,28 @@ while (numberFields < 16) {
 }
 
 const fields = Array.from(document.getElementsByClassName('bingofields'));
+let marked = Array(25).fill(false);
 
-fields.forEach((f) => {
+fields.forEach((f, i) => {
   f.addEventListener('click', () => {
     f.classList.toggle('valid');
+    marked[i] = f.classList.contains('valid');
+    if (checkBingo(marked)) {
+      alert('Bingo!');
+    }
   });
 });
+
+function checkBingo(marked) {
+  for (let r = 0; r < 5; r++) {
+    if (marked.slice(r * 5, r * 5 + 5).every(Boolean)) return true;
+  }
+
+  for (let c = 0; c < 5; c++) {
+    if ([0, 1, 2, 3, 4].map((r) => marked[r * 5 + c]).every(Boolean)) return true;
+  }
+
+  if ([0, 6, 12, 18, 24].map((i) => marked[i]).every(Boolean)) return true;
+  if ([4, 8, 12, 16, 20].map((i) => marked[i]).every(Boolean)) return true;
+  return false;
+}
