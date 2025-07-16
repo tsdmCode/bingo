@@ -1,0 +1,60 @@
+/* #region globals, variables and imports */
+@import 'reset.css';
+
+// sass --watch styles.scss styles.css 
+
+@mixin flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gridmobile($columns: repeat(1, 1fr)) {
+    display: grid;
+    grid-template-columns: $columns;
+} 
+
+/* #endregion  */
+
+/* #region header */
+
+/* #endregion */
+
+/* #region nav */
+
+/* #endregion  */
+
+/* #region one  */
+
+/* #endregion  */
+
+/* #region two */
+
+/* #endregion  */
+
+/* #region three  */
+
+/* #endregion  */
+
+/* #region queries  */
+
+/* #region screen  */
+
+@media screen and (min-width: 1200px) {
+}
+
+/* #endregion  */
+
+/* #region tablet  */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+}
+
+/* #endregion  */
+
+/* #endregion  */

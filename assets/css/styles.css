@@ -1,0 +1,42 @@
+/* #region globals, variables and imports */
+@import 'reset.css';
+
+/* #endregion  */
+
+/* #region header */
+
+/* #endregion */
+
+/* #region nav */
+
+/* #endregion  */
+
+/* #region one  */
+
+/* #endregion  */
+
+/* #region two */
+
+/* #endregion  */
+
+/* #region three  */
+
+/* #endregion  */
+
+/* #region queries  */
+
+/* #region screen  */
+
+@media screen and (min-width: 1300px) {
+}
+
+/* #endregion  */
+
+/* #region tablet  */
+
+@media screen and (min-width: 769px) and (max-width: 1299px) {
+}
+
+/* #endregion  */
+
+/* #endregion  */
