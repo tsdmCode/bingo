@@ -44,6 +44,6 @@ const fields = Array.from(document.getElementsByClassName('bingofields'));
 
 fields.forEach((f) => {
   f.addEventListener('click', () => {
-    f.classList.add('valid');
+    f.classList.toggle('valid');
   });
 });
