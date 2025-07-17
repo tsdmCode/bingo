@@ -46,14 +46,17 @@ while (numberFields < 25) {
 
 const fields = Array.from(document.getElementsByClassName('bingofields'));
 let marked = Array(25).fill(false);
+let bingoFlag = false;
 
 fields.forEach((f, i) => {
   f.addEventListener('click', () => {
-    console.log(i);
-    f.classList.toggle('valid');
-    marked[i] = f.classList.contains('valid');
-    if (checkBingo(marked)) {
-      alert('Bingo!');
+    if (!bingoFlag) {
+      f.classList.toggle('valid');
+      marked[i] = f.classList.contains('valid');
+      if (checkBingo(marked)) {
+        alert('Bingo!');
+        bingoFlag = true;
+      }
     }
   });
 });

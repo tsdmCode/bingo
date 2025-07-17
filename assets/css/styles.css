@@ -13,13 +13,11 @@ body {
 
 .valid {
   background-color: green;
-  color: white;
 }
 
 #field {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-
   width: 50%;
   height: 100%;
   margin-top: 10%;
