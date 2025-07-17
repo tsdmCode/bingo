@@ -4,6 +4,7 @@
 /* #endregion  */
 
 body {
+  background-color: black;
   font-family: montserrat, sans-serif;
   display: flex;
   justify-content: center;
@@ -18,17 +19,19 @@ body {
 #field {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  border: 1px solid black;
+
   width: 50%;
   height: 100%;
   margin-top: 10%;
 }
 
-#field div {
-  border: 1px solid black;
+#field div,
+#field {
+  border: 1px solid white;
 }
 
 #field div p {
+  color: white;
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -37,41 +40,3 @@ body {
   height: 50px;
   user-select: none;
 }
-
-/* #region header */
-
-/* #endregion */
-
-/* #region nav */
-
-/* #endregion  */
-
-/* #region one  */
-
-/* #endregion  */
-
-/* #region two */
-
-/* #endregion  */
-
-/* #region three  */
-
-/* #endregion  */
-
-/* #region queries  */
-
-/* #region screen  */
-
-@media screen and (min-width: 1300px) {
-}
-
-/* #endregion  */
-
-/* #region tablet  */
-
-@media screen and (min-width: 769px) and (max-width: 1299px) {
-}
-
-/* #endregion  */
-
-/* #endregion  */

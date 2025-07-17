@@ -25,6 +25,8 @@ const bingoArray = [
   'Gus noises',
   'Missed count',
   'Slur',
+  'Raccoon(Reikon) mentioned',
+  'Karstinen/Zerocool/Muskel reference',
 ];
 const field = document.getElementById('field');
 let numberFields = 0;
@@ -47,6 +49,7 @@ let marked = Array(25).fill(false);
 
 fields.forEach((f, i) => {
   f.addEventListener('click', () => {
+    console.log(i);
     f.classList.toggle('valid');
     marked[i] = f.classList.contains('valid');
     if (checkBingo(marked)) {
