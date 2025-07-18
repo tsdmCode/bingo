@@ -7,16 +7,25 @@ const arrays = [bingoArray, testArr];
 
 generateBtn.addEventListener('click', () => {
   field.innerHTML = '';
-  //TODO: make it pass in an array based on the selected option
-  generateField();
+  const option = parseInt(document.getElementById('selection').value);
+  const formatOption = parseInt(document.getElementById('format').value);
+
+  generateField(arrays[option], formatOption);
 });
 
-function generateField() {
+function generateField(arr, formatInt) {
   let numberFields = 0;
-  let newArray = [...bingoArray];
+  let newArray = [...arr];
+  field.className = '';
 
-  while (numberFields < 25) {
-    //Just putting this in here so people don't accidentally trigger an infinite
+  if (formatInt === 3) {
+    field.classList.add('three');
+  } else {
+    field.classList.add('five');
+  }
+
+  while (numberFields < formatInt * formatInt) {
+    //Just putting this in here so people don't accidentally trigger an infinite WITH TEENY TINY ARRAYS
     if (newArray.length === 0) {
       throw new Error('Insufficient array');
     }
@@ -26,7 +35,7 @@ function generateField() {
     const element = document.createElement('div');
     const para = document.createElement('p');
     element.classList.add('bingofields');
-    para.textContent = newArray[randInt];
+    para.textContent = numberFields != 12 ? newArray[randInt] : 'FREE SPACE';
     element.append(para);
     field.append(element);
     newArray.splice(randInt, 1);
@@ -34,7 +43,8 @@ function generateField() {
   }
 
   const fields = Array.from(document.getElementsByClassName('bingofields'));
-  let marked = Array(25).fill(false);
+
+  const marked = Array(formatInt * formatInt).fill(false);
   let bingoFlag = false;
 
   fields.forEach((f, i) => {
@@ -51,8 +61,7 @@ function generateField() {
   });
 }
 
-generateField();
-
+//TODO: make the checkbingo also work for a 3x3 grid
 function checkBingo(marked) {
   for (let r = 0; r < 5; r++) {
     if (marked.slice(r * 5, r * 5 + 5).every(Boolean)) return true;
@@ -66,3 +75,5 @@ function checkBingo(marked) {
   if ([4, 8, 12, 16, 20].map((i) => marked[i]).every(Boolean)) return true;
   return false;
 }
+
+generateField(bingoArray, 5);
