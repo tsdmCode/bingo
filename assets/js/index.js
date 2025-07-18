@@ -14,6 +14,8 @@ generateBtn.addEventListener('click', () => {
 });
 
 function generateField(arr, formatInt) {
+  const header = document.getElementById('global-header');
+  header.textContent = "POPE'S BINGO BONANZA";
   let numberFields = 0;
   let newArray = [...arr];
   field.className = '';
@@ -24,7 +26,7 @@ function generateField(arr, formatInt) {
     field.classList.add('five');
   }
 
-  const middleField = Math.floor(formatInt * formatInt / 2);
+  const middleField = Math.floor((formatInt * formatInt) / 2);
 
   while (numberFields < formatInt * formatInt) {
     //Just putting this in here so people don't accidentally trigger an infinite WITH TEENY TINY ARRAYS
@@ -55,7 +57,7 @@ function generateField(arr, formatInt) {
         f.classList.toggle('valid');
         marked[i] = f.classList.contains('valid');
         if (checkBingo(marked, formatInt)) {
-          document.getElementById('global-header').innerText = 'YOU ARE WINNER!';
+          header.innerText = 'YOU ARE WINNER!';
           bingoFlag = true;
         }
       }
