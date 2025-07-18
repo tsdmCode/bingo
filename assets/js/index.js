@@ -53,7 +53,7 @@ function generateField(arr, formatInt) {
         f.classList.toggle('valid');
         marked[i] = f.classList.contains('valid');
         if (checkBingo(marked)) {
-          alert('Bingo!');
+          document.getElementById('global-header').innerText = 'YOU ARE WINNER!';
           bingoFlag = true;
         }
       }
