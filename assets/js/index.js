@@ -24,6 +24,8 @@ function generateField(arr, formatInt) {
     field.classList.add('five');
   }
 
+  const middleField = Math.floor(formatInt * formatInt / 2);
+
   while (numberFields < formatInt * formatInt) {
     //Just putting this in here so people don't accidentally trigger an infinite WITH TEENY TINY ARRAYS
     if (newArray.length === 0) {
@@ -35,7 +37,7 @@ function generateField(arr, formatInt) {
     const element = document.createElement('div');
     const para = document.createElement('p');
     element.classList.add('bingofields');
-    para.textContent = numberFields != Math.floor(formatInt * formatInt / 2) ? newArray[randInt] : 'FREE SPACE';
+    para.textContent = formatInt === 5 && numberFields === middleField ? 'FREE SPACE' : newArray[randInt];
     element.append(para);
     field.append(element);
     newArray.splice(randInt, 1);
