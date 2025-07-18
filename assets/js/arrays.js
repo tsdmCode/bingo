@@ -1,0 +1,38 @@
+const bingoArray = [
+  'Reholy goes POP',
+  'Gus goes POP',
+  'Random Mage tomfoolery',
+  'Gus complains about X class',
+  'Gus complains about resil keys',
+  'Hitting instance cap',
+  'Boomkin fails to bearform',
+  'Dave misses stop',
+  'Dave eats frontal',
+  'Gus hyperfixates',
+  'Pre-run yap lasts longer than key',
+  'Gus learns something new',
+  'R.io gained',
+  'Gus references dbl rogue/warr comp',
+  'Gus expecting team to mindread',
+  'Reholy insta replies to Bloomi mid-run',
+  'Dave ninjapull',
+  'Random DPS does Z dam',
+  'Skip fail',
+  'Dave proc',
+  'HKCP strat in low key',
+  'Warmup key deplete',
+  'Gus goes non-verbal',
+  'Gus noises',
+  'Missed count',
+  'Slur',
+  'Raccoon(Reikon) mentioned',
+  'Karstinen/Zerocool/Muskel reference',
+  'Roiben told me...',
+  'Dave gets blamed for unrelated stuff',
+  'Tech issue',
+  'Gus cope',
+];
+
+const testArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
+
+export { bingoArray, testArr };
