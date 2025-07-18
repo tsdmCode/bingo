@@ -35,7 +35,7 @@ function generateField(arr, formatInt) {
     const element = document.createElement('div');
     const para = document.createElement('p');
     element.classList.add('bingofields');
-    para.textContent = numberFields != 12 ? newArray[randInt] : 'FREE SPACE';
+    para.textContent = numberFields != Math.floor(formatInt * formatInt / 2) ? newArray[randInt] : 'FREE SPACE';
     element.append(para);
     field.append(element);
     newArray.splice(randInt, 1);
@@ -52,7 +52,7 @@ function generateField(arr, formatInt) {
       if (!bingoFlag) {
         f.classList.toggle('valid');
         marked[i] = f.classList.contains('valid');
-        if (checkBingo(marked)) {
+        if (checkBingo(marked, formatInt)) {
           document.getElementById('global-header').innerText = 'YOU ARE WINNER!';
           bingoFlag = true;
         }
@@ -61,18 +61,18 @@ function generateField(arr, formatInt) {
   });
 }
 
-//TODO: make the checkbingo also work for a 3x3 grid
-function checkBingo(marked) {
-  for (let r = 0; r < 5; r++) {
-    if (marked.slice(r * 5, r * 5 + 5).every(Boolean)) return true;
+function checkBingo(marked, formatInt) {
+  for (let r = 0; r < formatInt; r++) {
+    if (marked.slice(r * formatInt, r * formatInt + formatInt).every(Boolean)) return true;
   }
 
-  for (let c = 0; c < 5; c++) {
-    if ([0, 1, 2, 3, 4].map((r) => marked[r * 5 + c]).every(Boolean)) return true;
+  for (let c = 0; c < formatInt; c++) {
+    if (Array.from({ length: formatInt }, (_, r) => marked[r * formatInt + c]).every(Boolean)) return true;
   }
 
-  if ([0, 6, 12, 18, 24].map((i) => marked[i]).every(Boolean)) return true;
-  if ([4, 8, 12, 16, 20].map((i) => marked[i]).every(Boolean)) return true;
+  if (Array.from({ length: formatInt }, (_, i) => marked[i * (formatInt + 1)]).every(Boolean)) return true;
+  if (Array.from({ length: formatInt }, (_, i) => marked[(i + 1) * (formatInt - 1)]).every(Boolean)) return true;
+
   return false;
 }
 
