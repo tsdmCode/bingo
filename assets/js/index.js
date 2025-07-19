@@ -1,16 +1,28 @@
-import { bingoArray, raidArr } from './arrays.js';
+import { sets } from './arrays.js';
 
 //DON'T TOUCH ANYTHING IN HERE REHOLY
 const field = document.getElementById('field');
 const generateBtn = document.getElementById('generate-btn');
-const arrays = [bingoArray, raidArr];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const selection = document.getElementById('selection');
+
+  sets.forEach((set, index) => {
+    if (set && set.name) {
+      const option = document.createElement('option');
+      option.value = index;
+      option.textContent = set.name;
+      selection.appendChild(option);
+    }
+  });
+});
 
 generateBtn.addEventListener('click', () => {
   field.innerHTML = '';
   const option = parseInt(document.getElementById('selection').value);
   const formatOption = parseInt(document.getElementById('format').value);
 
-  generateField(arrays[option], formatOption);
+  generateField(sets[option].array, formatOption);
 });
 
 function generateField(arr, formatInt) {
@@ -79,5 +91,3 @@ function checkBingo(marked, formatInt) {
 
   return false;
 }
-
-generateField(bingoArray, 5);
