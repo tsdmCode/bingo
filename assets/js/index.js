@@ -4,17 +4,15 @@ import { sets } from './arrays.js';
 const field = document.getElementById('field');
 const generateBtn = document.getElementById('generate-btn');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const selection = document.getElementById('selection');
+const selection = document.getElementById('selection');
 
-  sets.forEach((set, index) => {
-    if (set && set.name) {
-      const option = document.createElement('option');
-      option.value = index;
-      option.textContent = set.name;
-      selection.appendChild(option);
-    }
-  });
+sets.forEach((set, index) => {
+  if (set && set.name) {
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = set.name;
+    selection.appendChild(option);
+  }
 });
 
 generateBtn.addEventListener('click', () => {
