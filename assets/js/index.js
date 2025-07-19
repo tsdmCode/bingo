@@ -1,9 +1,9 @@
-import { bingoArray, testArr } from './arrays.js';
+import { bingoArray, raidArr } from './arrays.js';
 
 //DON'T TOUCH ANYTHING IN HERE REHOLY
 const field = document.getElementById('field');
 const generateBtn = document.getElementById('generate-btn');
-const arrays = [bingoArray, testArr];
+const arrays = [bingoArray, raidArr];
 
 generateBtn.addEventListener('click', () => {
   field.innerHTML = '';

@@ -4,7 +4,7 @@
 /* #endregion  */
 
 body {
-  background-color: black;
+  background-color: #424549;
   font-family: montserrat, sans-serif;
   color: white;
   padding-left: 25%;
@@ -15,15 +15,45 @@ body {
 h1 {
   text-align: center;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 header {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid white;
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+
+select {
+  color: white;
+  text-align: right;
+  background-color: #424549;
+  padding: 0.5rem 0rem;
+}
+
+select:focus,
+button:focus {
+  outline: none;
 }
 
 select,
 button {
+  width: 50%;
   font-family: montserrat, sans-serif;
+}
+
+button {
+  height: 2rem;
+  border-radius: 1rem;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .valid {
