@@ -66,8 +66,13 @@ function generateField(arr, formatInt) {
       if (!bingoFlag) {
         f.classList.toggle('valid');
         marked[i] = f.classList.contains('valid');
+        const click = new Audio('assets/sounds/click-3.mp3');
+        click.play();
         if (checkBingo(marked, formatInt)) {
           header.innerText = 'YOU ARE WINNER!';
+          const victory = new Audio('assets/sounds/final-fantasy-vii-victory-fanfare-1.mp3');
+          victory.volume = 0.1;
+          victory.play();
           bingoFlag = true;
         }
       }
