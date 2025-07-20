@@ -67,6 +67,7 @@ function generateField(arr, formatInt) {
         f.classList.toggle('valid');
         marked[i] = f.classList.contains('valid');
         const click = new Audio('assets/sounds/click-3.mp3');
+        click.volume = 0.5;
         click.play();
         if (checkBingo(marked, formatInt)) {
           header.innerText = 'YOU ARE WINNER!';
