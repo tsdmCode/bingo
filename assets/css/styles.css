@@ -35,6 +35,10 @@ select {
   padding: 0.5rem 0rem;
 }
 
+option {
+  text-align: right;
+}
+
 select:focus,
 button:focus {
   outline: none;
@@ -49,10 +53,18 @@ button {
 button {
   height: 2rem;
   border-radius: 1rem;
-  transition: 0.5s;
+  transition: 0.1s;
+  background-color: #00a2ed;
+  border: none;
 
   &:hover {
-    transform: scale(1.1);
+    transform: translateY(-0.05rem) scale(1.1);
+  }
+
+  &:active {
+    transform: translateY(0.25rem) scale(1.1);
+    color: white;
+    filter: hue-rotate(30deg);
   }
 }
 
@@ -62,7 +74,7 @@ button {
 
 #field {
   display: grid;
-  /* width: 500px; */
+  width: 100%;
   height: auto;
 }
 

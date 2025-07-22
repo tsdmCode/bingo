@@ -36,9 +36,10 @@ function generateField(arr, formatInt) {
     field.classList.add('five');
   }
 
-  const middleField = Math.floor((formatInt * formatInt) / 2);
+  const formatIntSquared = formatInt * formatInt;
+  const middleField = Math.floor(formatIntSquared / 2);
 
-  while (numberFields < formatInt * formatInt) {
+  while (numberFields < formatIntSquared) {
     //Just putting this in here so people don't accidentally trigger an infinite WITH TEENY TINY ARRAYS
     if (newArray.length === 0) {
       throw new Error('Insufficient array');
@@ -58,7 +59,7 @@ function generateField(arr, formatInt) {
 
   const fields = Array.from(document.getElementsByClassName('bingofields'));
 
-  const marked = Array(formatInt * formatInt).fill(false);
+  const marked = Array(formatIntSquared).fill(false);
   let bingoFlag = false;
 
   fields.forEach((f, i) => {
