@@ -70,6 +70,7 @@ function generateField(arr, formatInt) {
         const click = new Audio('assets/sounds/click-3.mp3');
         click.volume = 0.5;
         click.play();
+
         if (checkBingo(marked, formatInt)) {
           header.innerText = 'YOU ARE WINNER!';
           const victory = new Audio('assets/sounds/final-fantasy-vii-victory-fanfare-1.mp3');

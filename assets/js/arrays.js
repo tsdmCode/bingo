@@ -34,6 +34,9 @@ const sets = [
       'Dave gets blamed for unrelated stuff',
       'Tech issue',
       'Gus cope',
+      "New strat that 1 person knows and wasn't explained",
+      'Gus has a vision',
+      'Gus talks about premonitions',
     ],
   },
   {
