@@ -27,7 +27,7 @@ const sets = [
       'Gus goes non-verbal',
       'Gus noises',
       'Missed count',
-      'Slur',
+      'Random says a slur(Reholy would never)',
       'Raccoon(Reikon) mentioned',
       'Karstinen/Zerocool/Muscle reference',
       'Roiben told me...',
@@ -42,7 +42,7 @@ const sets = [
   {
     name: 'Raid',
     array: [
-      // 'Spoon proc',
+      'Spoon proc',
       'Draco proc',
       'Enzyr proc',
       'Loot drama',
@@ -55,7 +55,7 @@ const sets = [
       'Slur',
       'Dave ninjapull',
       'Babba challenging shout',
-      // 'Nexa reins Spoon in',
+      'Nexa reins Spoon in',
       'Dozer gets called bald',
       'Farmboss wipes us',
       'RIKA-RIKA-REVERB',
