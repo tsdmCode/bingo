@@ -75,6 +75,8 @@ const sets = [
       'Nalgust, Attorney at Law',
       'Spoon flames strat',
       "Someone didn't install WA/addon",
+      'Someone is saved',
+      'Draco ult!',
     ],
   },
 ];
