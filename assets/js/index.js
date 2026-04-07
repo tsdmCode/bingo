@@ -1,9 +1,8 @@
 import { sets } from './arrays.js';
 
-//DON'T TOUCH ANYTHING IN HERE REHOLY
+//DON'T TOUCH ANYTHING IN HERE IF YOU CAN'T CODE
 const field = document.getElementById('field');
 const generateBtn = document.getElementById('generate-btn');
-
 const selection = document.getElementById('selection');
 
 sets.forEach((set, index) => {
@@ -25,7 +24,7 @@ generateBtn.addEventListener('click', () => {
 
 function generateField(arr, formatInt) {
   const header = document.getElementById('global-header');
-  header.textContent = "POPE'S BINGO BONANZA";
+  header.textContent = "TROELS' BINGO BONANZA";
   let numberFields = 0;
   let newArray = [...arr];
   field.className = '';
